@@ -1,6 +1,6 @@
 import {Form, useNavigation } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/SearchForm'
-const SearchForm = () => {
+const SearchForm = ({searchTerm}) => {
   const navigate = useNavigation()
   const isSubmitted = navigate.state === 'submitting'
   return (
@@ -10,6 +10,8 @@ const SearchForm = () => {
         type='search'
         name='search'
         className='form-input'
+        defaultValue={searchTerm}
+        required
         />
         <button 
           type='submit'
